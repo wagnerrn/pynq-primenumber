@@ -11,9 +11,9 @@ void primeNumber(int position, int *prime) {
 	int root;
 	int i;
 
-    double error = 0.1; //define the precision of your result
-    double rnumber;
-    double s;
+    	double error = 0.1; //define the precision of your result
+    	double rnumber;
+    	double s;
 
 
 	primes[0] = 2;
@@ -29,11 +29,11 @@ void primeNumber(int position, int *prime) {
 		s = rnumber;
 
 		while ((s - rnumber / s) > error) //loop until precision satisfied 
-	    {
-	        s = (s + rnumber / s) / 2;
-	    }
+	    	{
+	        	s = (s + rnumber / s) / 2;
+	    	}
 
-	    root = (int) s;
+	    	root = (int) s;
 
 		for(i=0; i < counter; i++) {
 			if(number%primes[i] == 0) {
@@ -54,7 +54,7 @@ void primeNumber(int position, int *prime) {
 
 int main(int argc, char *argv[])
 {
-    int position = atoi(argv[1]);
+    	int position = atoi(argv[1]);
 	int prime;
 	double duration;
 	std::clock_t start;
