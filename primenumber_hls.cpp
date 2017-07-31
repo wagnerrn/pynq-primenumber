@@ -1,4 +1,4 @@
-void primeNumber(int position, int *prime) {
+void primeNumber(const int position, int *prime) {
 	int counter = 2;
 	int number = 3;
 	bool isprime;
@@ -30,7 +30,7 @@ void primeNumber(int position, int *prime) {
 
 		root = (int) s;
 
-		for(i=0; i < counter; i++) {
+		primeNumber_forPrimes:for(i=0; i < 100000; i++) {
 			if(number%primes[i] == 0) {
 				isprime = false;
 				break;
