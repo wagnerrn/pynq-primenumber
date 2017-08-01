@@ -4,7 +4,6 @@
 #include <ctime>
 #include <string>
 
-#include <math.h>
 
 int rootNumber(int rnumber) {
 	int s;
@@ -46,8 +45,6 @@ void primeNumber(int position, int *prime) {
 			count++;
 			*prime = i;
 		}
-		if(count == position)
-			break;
 		i+=2;
 	}
 }

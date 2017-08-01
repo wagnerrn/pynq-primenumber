@@ -32,7 +32,7 @@ void primeNumber(const int position, int *prime) {
 
 		root = s;
 
-		for(i=0; i < 100000; i++) {
+		primeSearch:for(i=0; i < 100000; i++) {
 			if(i > counter) {
 				break;
 			}
