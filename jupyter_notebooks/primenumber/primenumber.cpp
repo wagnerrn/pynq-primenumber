@@ -55,7 +55,7 @@ void primeNumber(int position, int *prime) {
 
 int main(int argc, char *argv[])
 {
-        std::string s = argv[1];
+    std::string s = argv[1];
 	int position = stoi(s);
 	int prime;
 	double duration;

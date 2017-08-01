@@ -5,10 +5,10 @@ void primeNumber(const int position, int *prime) {
 	int primes[100000];
 	int root;
 	int i;
+	int j;
 
-    double error = 0.1; //define the precision of your result
-    double rnumber;
-    double s;
+    int rnumber;
+    int s;
 
 
 	primes[0] = 2;
@@ -16,26 +16,31 @@ void primeNumber(const int position, int *prime) {
 	if (counter >= position) {
 		*prime = primes[position-1];
 	}
-	while (counter < position){
+	for(j=0; j < 1000000; j++){
 		number += 2;
+		if(counter >= position){
+			break;
+		}
 		isprime = true;
-		
-		rnumber = (double) number;
+
+		rnumber = number;
 		s = rnumber;
 
-		while ((s - rnumber / s) > error) //loop until precision satisfied 
-	    {
-	    	s = (s + rnumber / s) / 2;
+		for(i=0; i < 4; i++) {
+			s = (s + rnumber / s) / 2;
 		}
 
-		root = (int) s;
+		root = s;
 
-		primeNumber_forPrimes:for(i=0; i < 100000; i++) {
-			if(number%primes[i] == 0) {
-				isprime = false;
+		for(i=0; i < 100000; i++) {
+			if(i > counter) {
 				break;
 			}
 			if(i >= root) {
+				break;
+			}
+			if(number%primes[i] == 0) {
+				isprime = false;
 				break;
 			}
 		}
@@ -44,5 +49,5 @@ void primeNumber(const int position, int *prime) {
 			*prime = number;
 			counter += 1;
 		}
-	}  
+	}
 }
